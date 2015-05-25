@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   resources :books
   devise_for :users
+  
   root 'pages#home'
 
   get 'pages/about'
-  
+
+  get 'dashboard' => "pages#dashboard"
+
 end
