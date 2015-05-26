@@ -1,4 +1,8 @@
 class Book < ActiveRecord::Base
+
+	extend FriendlyId
+	friendly_id :name, use: :slugged
+
 	belongs_to :user
 	has_attached_file :image
 	has_attached_file :resource
@@ -13,4 +17,5 @@ class Book < ActiveRecord::Base
 
 	validates :image, attachment_presence: true
 	validates :resource, attachment_presence: true
+	
 end
