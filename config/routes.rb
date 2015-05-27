@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   get 'dashboard' => "pages#dashboard"
 
+  post '/buy/:slug', to: 'transactions#create', as: :buy
+
+  get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
+
 end
